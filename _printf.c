@@ -3,27 +3,36 @@
 /* COMENTARIO DE LA FUNCION */
 int _printf(const char *format, ...)
 {
-	int i, paso = 1;
+	va_list ap;
+	int i, c_imp = 0, paso = 1;
+	ccar ret;
 
+	if (format == NULL)
+		return (0);
+
+	va_start(ap, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		paso = 1;
 
-		if (format[i] == '\\' && format[i + 1] != '\0')
+		/* review the % flags */
+		if (format[i] == '%')
 		{
-			if (print_character_special(format[i + 1]))
-			{
-				i = i + 2;
-				paso = 0;
-			}
+			paso = 0;
+			i++;
+			ret = call_character_action(format, i, ap);
+			i = i + ret.salto;
+			c_imp = c_imp + ret.suma;
 		}
 
+		/* print the character if paso == 1 */
 		if (paso)
 		{
+			c_imp++;
 			_putchar(format[i]);
 		}
 	}
 
-	return (i);
+	va_end(ap);
+	return (c_imp);
 }
-

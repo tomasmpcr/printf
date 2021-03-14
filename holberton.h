@@ -1,20 +1,27 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 
+#include <stdio.h>
+#include <stdlib.h>
 #include <stdarg.h>
-
-typedef struct special_character{
-	char car;
-	char fun_car;
-} list_sc;
 
 typedef struct actions_special{
 	char car;
-	void (*f)(va_list);
+	int (*f)(char *, va_list);
 } list_as;
+
+typedef struct call_character_action_return{
+	int salto;
+	int suma;
+} ccar;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-int print_character_special(const char);
+ccar call_character_action(const char *format, const int i, va_list);
+
+
+/* FINCTION FLAGS PROT */
+int fun_print_c(char *flags, va_list);
+int fun_print_s(char *flags, va_list);
 
 #endif /* HOLBERTON_H */
