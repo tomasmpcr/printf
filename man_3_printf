@@ -1,0 +1,28 @@
+.\" Manpage for PRINTF.
+.TH man 8 "17 March 2021" "1.0" "Printf man page"
+.SH NAME
+Printf
+.SH SYNOPSIS
+printf("%option", ARGUMENT);
+.SH DESCRIPTION
+Print ARGUMENT(s) according to FORMAT, or excecute acoording to OPTION
+
+.SH OPTIONS
+
+%c
+
+This option is used to print a single character
+
+%d
+
+This option is used to print a decimal
+
+
+
+
+.SH SEE ALSO
+if you do not understand or information is missing, look in man page printf
+.SH REPORTING BUGS
+If you find any bug, please contact on GitHub | @fedeblengio or @tshuna332
+.SH AUTHOR
+Federico Blengio and Tomas Martinez - Holberton School 2021 Uruguay
