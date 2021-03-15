@@ -5,12 +5,29 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
-typedef struct actions_special{
+/**
+ * struct actions_special - actions_special
+ * @car: character
+ * @f: pointer
+ * Description: actions_special
+ */
+
+typedef struct actions_special
+{
 	char car;
 	int (*f)(char *, va_list);
 } list_as;
 
-typedef struct call_character_action_return{
+
+/**
+ * struct call_character_action_return - call_character_action_return
+ * @salto: character
+ * @suma: pointer
+ * Description: call_character_action_return
+ */
+
+typedef struct call_character_action_return
+{
 	int salto;
 	int suma;
 } ccar;
