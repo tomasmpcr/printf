@@ -17,9 +17,13 @@ This option is used to print a single character
 
 This option is used to print a character string
 
+%d
 
+This option is used to print a decimal
 
+%i
 
+This option is used to print an integer
 
 .SH SEE ALSO
 if you do not understand or information is missing, look in man page printf
