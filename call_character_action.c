@@ -11,6 +11,8 @@ ccar call_character_action(const char *format, const int i, va_list ap)
 	list_as as[] = {
 		{'c', fun_print_c},
 		{'s', fun_print_s},
+		{'i', fun_print_i},
+		{'d', fun_print_d}
 		{'\0', NULL}
 	};
 
