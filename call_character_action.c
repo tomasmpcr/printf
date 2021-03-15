@@ -42,8 +42,7 @@ ccar call_ca2(const char *format, const int i, va_list ap, list_as as[])
 
 	ccar ret = {0, 0};
 
-	paso = callca4(format, as, lisA, i, j, &r);
-
+	paso = callca4(format, as, lisA, i, &j, &r);
 	if (paso == 1)
 	{
 		res = callca3(format, as, ap, i, j, r);
@@ -52,7 +51,11 @@ ccar call_ca2(const char *format, const int i, va_list ap, list_as as[])
 		else
 			ret.suma = res;
 	}
-	else
+	else if (paso == 2)
+	{
+		ret.suma = -1;
+	}
+	else if (paso == 0)
 	{
 		ret.suma = 1;
 		_putchar('%');
@@ -101,16 +104,16 @@ int callca3(const char *format, list_as as[], va_list ap, int i, int j, int r)
 * ------------------------------------
 * Return: return the characters
 */
-int callca4(const char *format, list_as as[], char *liA, int i, int j, int *r)
+int callca4(const char *format, list_as as[], char *liA, int i, int *j, int *r)
 {
 	int paso = 0, paso2 = 0, t;
 
-	for (j = 0; format[i + j] != '\0'; j++)
+	for (*j = 0; format[i + *j] != '\0'; *j = *j + 1)
 	{
 		paso2 = 0;
 		for (*r = 0; as[*r].car != '\0'; *r = *r + 1)
 		{
-			if (format[i + j] == as[*r].car)
+			if (format[i + *j] == as[*r].car)
 			{
 				paso = 1;
 				break;
@@ -120,17 +123,20 @@ int callca4(const char *format, list_as as[], char *liA, int i, int j, int *r)
 			break;
 		for (t = 0; liA[t] != '\0'; t++)
 		{
-			if (format[i + j] == liA[t])
+			if (format[i + *j] == liA[t])
 				paso2 = 1;
 		}
 		if (paso2 == 0)
 		{
-			paso = 2;
+			paso = 0;
 			break;
 		}
 		if (paso != 0)
 			break;
 	}
+
+	if (paso == 0 && format[i + *j] == '\0')
+		paso = 2;
 
 	return (paso);
 }
