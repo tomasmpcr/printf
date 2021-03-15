@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-ccar call_ca2(const char *format, const int i, va_list ap, list_as as);
+ccar call_ca2(const char *format, const int i, va_list ap, list_as as[]);
 
 /**
 * call_character_action - list of other functions
@@ -13,7 +13,7 @@ ccar call_ca2(const char *format, const int i, va_list ap, list_as as);
 
 ccar call_character_action(const char *format, const int i, va_list ap)
 {
-	ccar ret = {0, 0};
+	ccar ret;
 	list_as as[] = {
 		{'c', fun_print_c},
 		{'s', fun_print_s},
@@ -37,7 +37,7 @@ ccar call_character_action(const char *format, const int i, va_list ap)
 * ------------------------------------
 * Return: return the characters
 */
-ccar call_ca2(const char *format, const int i, va_list ap, list_as as)
+ccar call_ca2(const char *format, const int i, va_list ap, list_as as[])
 {
 	int j, r, t, paso = 0;
 	char *flags;
