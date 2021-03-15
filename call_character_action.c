@@ -1,7 +1,5 @@
 #include "holberton.h"
 
-ccar call_ca2(const char *format, const int i, va_list ap, list_as as[]);
-
 /**
 * call_character_action - list of other functions
 * @format: string to process

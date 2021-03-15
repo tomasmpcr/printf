@@ -35,7 +35,7 @@ typedef struct call_character_action_return
 int _putchar(char c);
 int _printf(const char *format, ...);
 ccar call_character_action(const char *format, const int i, va_list);
-
+ccar call_ca2(const char *format, const int i, va_list ap, list_as as[]);
 
 /* FINCTION FLAGS PROT */
 int fun_print_c(char *flags, va_list);
