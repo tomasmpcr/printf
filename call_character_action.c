@@ -37,36 +37,19 @@ ccar call_character_action(const char *format, const int i, va_list ap)
 */
 ccar call_ca2(const char *format, const int i, va_list ap, list_as as[])
 {
-	int j, r, t, paso = 0;
-	char *flags;
+	int j = 0, r, paso = 0, res = 0;
+	char *lisA = "-0+ #";
 
 	ccar ret = {0, 0};
+	call_ca4(format, as, lisA, i, j, &r);
 
-	for (j = 0; format[i + j] != '\0'; j++)
+	if (paso == 1)
 	{
-		for (r = 0; as[r].car != '\0'; r++)
-		{
-			if (format[i + j] == as[r].car)
-			{
-				paso = 1;
-				break;
-			}
-		}
-		if (paso)
-			break;
-	}
-	if (paso)
-	{
-		flags = malloc((j + 2) * sizeof(char));
-		if (flags == NULL)
-			return (ret);
-		for (t = 0; t < j; t++)
-			flags[t] = format[i + t];
-		flags[t] = '\0';
-		ret.suma = as[r].f(flags, ap);
-		if (ret.suma < 0)
+		res = call_ca3(format, as, ap, i, j, r);
+		if (res < 0)
 			ret.suma = 1;
-		free(flags);
+		else
+			ret.suma = res;
 	}
 	else
 	{
@@ -76,4 +59,73 @@ ccar call_ca2(const char *format, const int i, va_list ap, list_as as[])
 	}
 	ret.salto = j;
 	return (ret);
+}
+
+/**
+* call_ca3 - call other functions
+* @format: string to process
+* @as: list of other functions
+* @ap: list of paramtros
+* @i: the posicion in the string
+* @j: the posicion in the string
+* @r: the posicion in the string
+* ------------------------------------
+* Return: return the characters
+*/
+int call_ca3(const char *format, list_as as[], va_list ap, int i, int j, int r)
+{
+	int t, ret = 0;
+	char *flags;
+
+	flags = malloc((j + 2) * sizeof(char));
+	if (flags == NULL)
+		return (1);
+	for (t = 0; t < j; t++)
+		flags[t] = format[i + t];
+	flags[t] = '\0';
+	ret = as[r].f(flags, ap);
+
+	free(flags);
+	return (ret);
+}
+
+/**
+* call_ca4 - call other functions
+* @format: string to process
+* @i: the posicion in the string
+* @ap: list of paramtros
+* @as: list of other functions
+* ------------------------------------
+* Return: return the characters
+*/
+int call_ca4(const char *format, list_as as[], char *lisA, int i, int j, int *r)
+{
+	int paso = 0, paso2 = 0, t;
+
+	for (j = 0; format[i + j] != '\0'; j++)
+	{
+		for (*r = 0; as[*r].car != '\0'; *r = *r + 1)
+		{
+			paso2 = 0;
+			if (format[i + j] == as[*r].car)
+			{
+				paso = 1;
+				break;
+			}
+			for (t = 0; lisA[t] != '\0'; t++)
+			{
+				if (format[i + j] == lisA[t])
+					paso2 = 1;
+			}
+			if (paso2 == 0)
+			{
+				paso = 2;
+				break;
+			}
+		}
+		if (paso != 0)
+			break;
+	}
+
+	return (paso);
 }
