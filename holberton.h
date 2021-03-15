@@ -24,6 +24,5 @@ ccar call_character_action(const char *format, const int i, va_list);
 int fun_print_c(char *flags, va_list);
 int fun_print_s(char *flags, va_list);
 int fun_print_i(char *flags, va_list);
-int fun_print_d(char *flags, va_list);
 
 #endif /* HOLBERTON_H */
