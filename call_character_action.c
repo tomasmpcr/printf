@@ -41,8 +41,7 @@ ccar call_ca2(const char *format, const int i, va_list ap, list_as as[])
 	char *lisA = "-0+ #";
 
 	ccar ret = {0, 0};
-	call_ca4(format, as, lisA, i, j, &r);
-
+	paso = call_ca4(format, as, lisA, i, j, &r);
 	if (paso == 1)
 	{
 		res = call_ca3(format, as, ap, i, j, r);
@@ -104,24 +103,26 @@ int call_ca4(const char *format, list_as as[], char *lisA, int i, int j, int *r)
 
 	for (j = 0; format[i + j] != '\0'; j++)
 	{
+		paso2 = 0;
 		for (*r = 0; as[*r].car != '\0'; *r = *r + 1)
 		{
-			paso2 = 0;
 			if (format[i + j] == as[*r].car)
 			{
 				paso = 1;
 				break;
 			}
-			for (t = 0; lisA[t] != '\0'; t++)
-			{
-				if (format[i + j] == lisA[t])
-					paso2 = 1;
-			}
-			if (paso2 == 0)
-			{
-				paso = 2;
-				break;
-			}
+		}
+		if (paso != 0)
+			break;
+		for (t = 0; lisA[t] != '\0'; t++)
+		{
+			if (format[i + j] == lisA[t])
+				paso2 = 1;
+		}
+		if (paso2 == 0)
+		{
+			paso = 2;
+			break;
 		}
 		if (paso != 0)
 			break;
