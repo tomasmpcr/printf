@@ -42,11 +42,11 @@ ccar call_ca2(const char *format, const int i, va_list ap, list_as as[])
 
 	ccar ret = {0, 0};
 
-	paso = call_ca4(format, as, lisA, i, j, &r);
+	paso = callca4(format, as, lisA, i, j, &r);
 
 	if (paso == 1)
 	{
-		res = call_ca3(format, as, ap, i, j, r);
+		res = callca3(format, as, ap, i, j, r);
 		if (res < 0)
 			ret.suma = 1;
 		else
