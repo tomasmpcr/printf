@@ -15,7 +15,6 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 	{
-		_putchar('\0');
 		return (-1);
 	}
 
@@ -23,7 +22,6 @@ int _printf(const char *format, ...)
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		paso = 1;
-
 		/* review the % flags */
 		if (format[i] == '%')
 		{
@@ -41,7 +39,6 @@ int _printf(const char *format, ...)
 				paso = 1;
 			}
 		}
-
 		/* print the character if paso == 1 */
 		if (paso)
 		{
@@ -49,7 +46,6 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 		}
 	}
-
 	va_end(ap);
 	return (c_imp);
 }
