@@ -41,7 +41,9 @@ ccar call_ca2(const char *format, const int i, va_list ap, list_as as[])
 	char *lisA = "-0+ #";
 
 	ccar ret = {0, 0};
+
 	paso = call_ca4(format, as, lisA, i, j, &r);
+
 	if (paso == 1)
 	{
 		res = call_ca3(format, as, ap, i, j, r);
@@ -91,13 +93,15 @@ int call_ca3(const char *format, list_as as[], va_list ap, int i, int j, int r)
 /**
 * call_ca4 - call other functions
 * @format: string to process
-* @i: the posicion in the string
-* @ap: list of paramtros
 * @as: list of other functions
+* @liA: list of paramtros
+* @i: the posicion in the string
+* @j: the posicion in the string
+* @r: the posicion in the string
 * ------------------------------------
 * Return: return the characters
 */
-int call_ca4(const char *format, list_as as[], char *lisA, int i, int j, int *r)
+int call_ca4(const char *format, list_as as[], char *liA, int i, int j, int *r)
 {
 	int paso = 0, paso2 = 0, t;
 
@@ -114,9 +118,9 @@ int call_ca4(const char *format, list_as as[], char *lisA, int i, int j, int *r)
 		}
 		if (paso != 0)
 			break;
-		for (t = 0; lisA[t] != '\0'; t++)
+		for (t = 0; liA[t] != '\0'; t++)
 		{
-			if (format[i + j] == lisA[t])
+			if (format[i + j] == liA[t])
 				paso2 = 1;
 		}
 		if (paso2 == 0)
