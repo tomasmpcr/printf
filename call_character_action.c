@@ -42,10 +42,17 @@ ccar call_character_action(const char *format, const int i, va_list ap)
 		flags[t] = '\0';
 
 		ret.suma = as[r].f(flags, ap);
+
+		if (ret.suma < 0)
+			ret.suma = 1;
+
 		free(flags);
 	}
 	else
+	{
+		ret.suma = -1;
 		j = 0;
+	}
 
 	ret.salto = j;
 

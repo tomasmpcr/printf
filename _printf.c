@@ -20,9 +20,15 @@ int _printf(const char *format, ...)
 		{
 			paso = 0;
 			i++;
-			ret = call_character_action(format, i, ap);
-			i = i + ret.salto;
-			c_imp = c_imp + ret.suma;
+
+			if (format[i] != '%')
+			{
+				ret = call_character_action(format, i, ap);
+				i = i + ret.salto;
+				c_imp = c_imp + ret.suma;
+			}
+			else
+				paso = 1;
 		}
 
 		/* print the character if paso == 1 */
