@@ -50,8 +50,9 @@ ccar call_character_action(const char *format, const int i, va_list ap)
 	}
 	else
 	{
-		ret.suma = -1;
-		j = 0;
+		ret.suma = 1;
+		_putchar('%');
+		j = -1;
 	}
 
 	ret.salto = j;

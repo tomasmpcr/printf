@@ -28,7 +28,9 @@ int _printf(const char *format, ...)
 				c_imp = c_imp + ret.suma;
 			}
 			else
+			{
 				paso = 1;
+			}
 		}
 
 		/* print the character if paso == 1 */
