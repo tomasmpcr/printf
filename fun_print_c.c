@@ -1,6 +1,12 @@
 #include "holberton.h"
+/**
+* fun_print_c -function of character
+* @ap: parametrs of numbers
+* @flags: the flags
+* ------------------------------------
+* Return: return the characters
+*/
 
-/* COMENTARIO DE LA FUNCION */
 int fun_print_c(__attribute__((unused)) char *flags, va_list ap)
 {
 	char c;
