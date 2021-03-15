@@ -63,7 +63,7 @@ ccar call_ca2(const char *format, const int i, va_list ap, list_as as[])
 }
 
 /**
-* call_ca3 - call other functions
+* callca3 - call other functions
 * @format: string to process
 * @as: list of other functions
 * @ap: list of paramtros
@@ -91,7 +91,7 @@ int callca3(const char *format, list_as as[], va_list ap, int i, int j, int r)
 }
 
 /**
-* call_ca4 - call other functions
+* callca4 - call other functions
 * @format: string to process
 * @as: list of other functions
 * @liA: list of paramtros
