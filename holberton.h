@@ -38,7 +38,7 @@ int _printf(const char *format, ...);
 ccar call_character_action(const char *format, const int i, va_list);
 ccar call_ca2(const char *format, const int i, va_list ap, list_as as[]);
 int callca3(const char *format, list_as as[], va_list ap, int i, int j, int r);
-int callca4(const char *format, list_as as[], char *liA, int i, int *j, int *r);
+int callc4(const char *format, list_as as[], char *liA, int i, int *j, int *r);
 
 /* FINCTION FLAGS PROT */
 int fun_print_c(char *flags, va_list);

@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 {
 	va_list ap;
 	int c_imp = 0;
-	
+
 	if (format == NULL)
 	{
 		return (-1);
@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 /**
 * _func - function of printf
 * @format: characters to print
-* @va_list: asd
+* @ap: asd
 * ------------------------------------
 * Return: return the number characters
 */

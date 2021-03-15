@@ -42,7 +42,7 @@ ccar call_ca2(const char *format, const int i, va_list ap, list_as as[])
 
 	ccar ret = {0, 0};
 
-	paso = callca4(format, as, lisA, i, &j, &r);
+	paso = callc4(format, as, lisA, i, &j, &r);
 	if (paso == 1)
 	{
 		res = callca3(format, as, ap, i, j, r);
@@ -94,7 +94,7 @@ int callca3(const char *format, list_as as[], va_list ap, int i, int j, int r)
 }
 
 /**
-* callca4 - call other functions
+* callc4 - call other functions
 * @format: string to process
 * @as: list of other functions
 * @liA: list of paramtros
@@ -104,7 +104,7 @@ int callca3(const char *format, list_as as[], va_list ap, int i, int j, int r)
 * ------------------------------------
 * Return: return the characters
 */
-int callca4(const char *format, list_as as[], char *liA, int i, int *j, int *r)
+int callc4(const char *format, list_as as[], char *liA, int i, int *j, int *r)
 {
 	int paso = 0, paso2 = 0, t;
 
