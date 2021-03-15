@@ -1,6 +1,12 @@
 #include "holberton.h"
 
-/* COMENTARIO DE LA FUNCION */
+/**
+* _printf - function of printf
+* @format: characters to print
+* ------------------------------------
+* Return: return the number characters
+*/
+
 int _printf(const char *format, ...)
 {
 	va_list ap;
