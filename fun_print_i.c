@@ -10,10 +10,18 @@
 
 int fun_print_i(__attribute__((unused)) char *flags, va_list ap)
 {
-	int aux, i, len, num;
+	int aux, i, len, num, neg = 0;
 	char *listNuambers;
 
 	num = va_arg(ap, int);
+
+	if (num < 0)
+	{
+		neg = 1;
+		num = num * -1;
+		_putchar('-');
+	}
+
 	aux = num;
 
 	for (i = 0; aux != 0 ; i++)
@@ -45,5 +53,5 @@ int fun_print_i(__attribute__((unused)) char *flags, va_list ap)
 	}
 
 
-	return (len);
+	return (len + neg);
 }
