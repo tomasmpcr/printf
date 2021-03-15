@@ -73,7 +73,7 @@ ccar call_ca2(const char *format, const int i, va_list ap, list_as as[])
 * ------------------------------------
 * Return: return the characters
 */
-int call_ca3(const char *format, list_as as[], va_list ap, int i, int j, int r)
+int callca3(const char *format, list_as as[], va_list ap, int i, int j, int r)
 {
 	int t, ret = 0;
 	char *flags;
@@ -101,7 +101,7 @@ int call_ca3(const char *format, list_as as[], va_list ap, int i, int j, int r)
 * ------------------------------------
 * Return: return the characters
 */
-int call_ca4(const char *format, list_as as[], char *liA, int i, int j, int *r)
+int callca4(const char *format, list_as as[], char *liA, int i, int j, int *r)
 {
 	int paso = 0, paso2 = 0, t;
 
