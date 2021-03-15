@@ -13,9 +13,10 @@ Print ARGUMENT(s) according to FORMAT, or excecute acoording to OPTION
 
 This option is used to print a single character
 
-%d
+%s
 
-This option is used to print a decimal
+This option is used to print a character string
+
 
 
 
