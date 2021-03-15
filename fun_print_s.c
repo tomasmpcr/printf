@@ -12,6 +12,10 @@ int fun_print_s(__attribute__((unused)) char *flags, va_list ap)
 	char *str;
 
 	str = va_arg(ap, char *);
+	if(str == NULL)
+	{
+		str = "(null)";
+	}
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
