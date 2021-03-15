@@ -14,7 +14,10 @@ int _printf(const char *format, ...)
 	ccar ret;
 
 	if (format == NULL)
+	{
+		_putchar('\0');
 		return (-1);
+	}
 
 	va_start(ap, format);
 	for (i = 0; format[i] != '\0'; i++)
