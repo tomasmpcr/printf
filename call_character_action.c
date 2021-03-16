@@ -17,6 +17,7 @@ ccar call_character_action(const char *format, const int i, va_list ap)
 		{'s', fun_print_s},
 		{'i', fun_print_i},
 		{'d', fun_print_i},
+		{'R', fun_print_R},
 		{'b', fun_print_b},
 		{'\0', NULL}
 	};
