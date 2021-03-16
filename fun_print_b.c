@@ -9,10 +9,10 @@
 
 int fun_print_b(__attribute__((unused)) char *flags, va_list ap)
 {
-	unsigned int numB10 = 0, numB2 = 1, len = 0, i;
+	int numB10 = 0, numB2 = 1, len = 0, i;
 	numB10 = va_arg(ap, unsigned int);
 
-	if(numB10 == 0)
+	if(numB10 <= 0)
 	{
 		_putchar('0');
 		return (1);
