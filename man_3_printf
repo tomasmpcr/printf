@@ -30,6 +30,7 @@ This option is used to print an integer
 This option is used to prints the reversed string
 
 %R
+
 This option is used to prints the rot13'ed string
 
 .SH SEE ALSO
