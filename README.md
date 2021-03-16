@@ -53,3 +53,17 @@ i
 handle precision - You dont have to handle the length modifiers
 # 2. Just because it's in print doesn't mean it's the gospel
 Create a man page for your function.
+
+
+# 14. Print is the sharpest and the strongest weapon of our party
+
+Handle the following custom conversion specifier:
+
+- r : prints the reversed string
+
+# 15. The flood of print has turned reading into a process of gulping rather than savoring
+Handle the following custom conversion specifier:
+
+- R: prints the rot13'ed string
+
+Federico Blengio && Tomas Martinez
