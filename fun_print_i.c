@@ -10,31 +10,43 @@
 
 int fun_print_i(__attribute__((unused)) char *flags, va_list ap)
 {
-	int i, len = 0, div = 1;
-	unsigned int num;
+	int aux, i, len, num, neg = 0;
+	char *listNuambers;
 
-	i = va_arg(ap, int);
+	num = va_arg(ap, int);
 
-	if (i < 0)
+	if  (num == 0)
 	{
-		num = i * -1;
+		_putchar('0');
+		return (1);
+	}
+	if (num < 0)
+	{
+		neg = 1;
+		num = num * -1;
 		_putchar('-');
-		len++;
 	}
-	else
-		num = i;
-
-	for (i = 0; (num / div) > 10; i++)
+	aux = num;
+	for (i = 0; aux != 0 ; i++)
 	{
-		div = div * 10;
+		aux = aux / 10;
 	}
-	len += i + 1;
-
-	for (; (i + 1) > 0; i--)
+	len = i;
+	listNuambers = malloc((i + 1) * sizeof(char));
+	if (listNuambers == NULL)
 	{
-		_putchar(((num / div) % 10) + '0');
-		div = div / 10;
+		return (-1);
 	}
-
-	return (len);
+	aux = num;
+	for (i = 0 ; aux != 0 ; i++)
+	{
+		listNuambers[i] = (aux % 10) + 48;
+		aux = aux / 10;
+	}
+	listNuambers[i] = '\0';
+	for (i = (len - 1) ; i >= 0 ; i--)
+	{
+		_putchar(listNuambers[i]);
+	}
+	return (len + neg);
 }
