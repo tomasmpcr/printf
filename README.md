@@ -66,4 +66,4 @@ Handle the following custom conversion specifier:
 
 - R: prints the rot13'ed string
 
-Federico Blengio && Tomas Martinez
+# Federico Blengio && Tomas Martinez
