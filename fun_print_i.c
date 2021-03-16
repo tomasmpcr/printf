@@ -7,9 +7,11 @@
 * ------------------------------------
 * Return: return the characters
 */
-int fun_print_i(__attribute__((unused)) char *flags, va_list ap) {
+int fun_print_i(__attribute__((unused)) char *flags, va_list ap)
+{
 	int i, len = 0, div = 1;
 	unsigned int num;
+
 	i = va_arg(ap, int);
 	if (i < 0)
 	{
