@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-* fun_print_R - function of rot13
+* fun_print_R -function of character
 * @ap: parametrs of numbers
 * @flags: the flags
 * ------------------------------------
@@ -9,5 +9,10 @@
 
 int fun_print_R(__attribute__((unused)) char *flags, va_list ap)
 {
+	char c;
 
+	c = va_arg(ap, int);
+	_putchar(c);
+
+	return (1);
 }
