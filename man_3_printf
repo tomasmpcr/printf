@@ -25,6 +25,13 @@ This option is used to print a decimal
 
 This option is used to print an integer
 
+%r
+
+This option is used to prints the reversed string
+
+%R
+This option is used to prints the rot13'ed string
+
 .SH SEE ALSO
 if you do not understand or information is missing, look in man page printf
 .SH REPORTING BUGS
