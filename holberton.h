@@ -44,5 +44,6 @@ int callc4(const char *format, list_as as[], char *liA, int i, int *j, int *r);
 int fun_print_c(char *flags, va_list);
 int fun_print_s(char *flags, va_list);
 int fun_print_i(char *flags, va_list);
+int fun_print_b(char *flags, va_list);
 
 #endif /* HOLBERTON_H */
