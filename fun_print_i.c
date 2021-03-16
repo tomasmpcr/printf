@@ -19,7 +19,7 @@ int fun_print_i(__attribute__((unused)) char *flags, va_list ap) {
 	}
 	else
 		num = i;
-	for (i = 0; (num / div) > 10; i++)
+	for (i = 0; (num / div) > 9; i++)
 	{
 		div = div * 10;
 	}
