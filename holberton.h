@@ -46,4 +46,12 @@ int fun_print_s(char *flags, va_list);
 int fun_print_i(char *flags, va_list);
 int fun_print_b(char *flags, va_list);
 int fun_print_R(char *flags, va_list);
+
+
+
+
+
+
+int fun_print_r(char *flags, va_list);
+
 #endif /* HOLBERTON_H */
