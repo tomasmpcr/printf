@@ -9,14 +9,16 @@
 
 int fun_print_b(__attribute__((unused)) char *flags, va_list ap)
 {
-	int numB10 = 0, numB2 = 1, len = 0, i;
-	numB10 = va_arg(ap, int);
+	int paso = 0;
+	unsigned int numB10 = 0, numB2 = 1, len = 0, i;
+	paso = va_arg(ap, int);
 
-	if(numB10 <= 0)
+	if(paso <= 0)
 	{
 		_putchar('0');
 		return (1);
 	}
+	numB10 = paso;
 
 	for (; numB10 != 0;)
 	{
