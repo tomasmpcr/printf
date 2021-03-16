@@ -10,22 +10,25 @@
 
 int fun_print_i(__attribute__((unused)) char *flags, va_list ap)
 {
-	int i, len, num, neg = 0, div = 1;
+	int i, len = 0, div = 1;
+	unsigned int num;
 
-	num = va_arg(ap, int);
+	i = va_arg(ap, int);
 
-	if (num < 0)
+	if (i < 0)
 	{
-		neg = 1;
-		num = num * -1;
+		num = i * -1;
 		_putchar('-');
+		len++;
 	}
+	else
+		num = i;
 
 	for (i = 0; (num / div) > 10; i++)
 	{
 		div = div * 10;
 	}
-	len = i + 1;
+	len += i + 1;
 
 	for (; (i + 1) > 0; i--)
 	{
@@ -33,5 +36,5 @@ int fun_print_i(__attribute__((unused)) char *flags, va_list ap)
 		div = div / 10;
 	}
 
-	return (len + neg);
+	return (len);
 }
