@@ -42,7 +42,12 @@ composed of zero or more directives. See man 3 printf for more detail. You need 
     
 - You dont have to handle the length modifiers
 ## 1. Education is when you read the fine print. Experience is what you get if you don't mandatory
-Handle the following conversion specifiers: ``` d i ``` - You dont have to handle the flag characters - You dont have to handle field width - You dont have to 
+Handle the following conversion specifiers:
+``` 
+d 
+i
+```
+- You dont have to handle the flag characters - You dont have to handle field width - You dont have to 
 handle precision - You dont have to handle the length modifiers
-## [](https://github.com/martinmsaavedra/printf#2-just-because-its-in-print-doesnt-mean-its-the-gospel)2. Just because it's in print doesn't mean it's the gospel
+# 2. Just because it's in print doesn't mean it's the gospel
 Create a man page for your function.
