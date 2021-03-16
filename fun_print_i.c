@@ -1,6 +1,30 @@
 #include "holberton.h"
 
 /**
+ * print_number - loco..
+ *@n: num
+ *
+ * Return: void.
+ */
+void print_number(int n)
+{
+	unsigned int num;
+
+	if (n < 0)
+	{
+		_putchar('-');
+		num = -n;
+	}
+	else
+		num = n;
+
+	if ((num / 10) != 0)
+		print_number(num / 10);
+
+	_putchar((num % 10) + '0');
+}
+
+/**
 * fun_print_i -function of integer
 * @ap: parametrs of numbers
 * @flags: the flags
@@ -10,43 +34,22 @@
 
 int fun_print_i(__attribute__((unused)) char *flags, va_list ap)
 {
-	int aux, i, len, num, neg = 0;
-	char *listNuambers;
+	int n, len = 0, div = 1, i;
+	n = va_arg(ap, int);
 
-	num = va_arg(ap, int);
+	print_number(n);
 
-	if  (num == 0)
+	if (n < 0)
 	{
-		_putchar('0');
-		return (1);
+		n = n * -1;
+		len++;
 	}
-	if (num < 0)
+
+	for (i = 0; (n / div) > 10; i++)
 	{
-		neg = 1;
-		num = num * -1;
-		_putchar('-');
+		div = div * 10;
 	}
-	aux = num;
-	for (i = 0; aux != 0 ; i++)
-	{
-		aux = aux / 10;
-	}
-	len = i;
-	listNuambers = malloc((i + 1) * sizeof(char));
-	if (listNuambers == NULL)
-	{
-		return (-1);
-	}
-	aux = num;
-	for (i = 0 ; aux != 0 ; i++)
-	{
-		listNuambers[i] = (aux % 10) + 48;
-		aux = aux / 10;
-	}
-	listNuambers[i] = '\0';
-	for (i = (len - 1) ; i >= 0 ; i--)
-	{
-		_putchar(listNuambers[i]);
-	}
-	return (len + neg);
+	len += i + 1;
+
+	return (len);
 }
