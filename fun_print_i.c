@@ -24,7 +24,7 @@ int fun_print_i(__attribute__((unused)) char *flags, va_list ap) {
 		div = div * 10;
 	}
 
-	for (; (i + 1) > 0; i--)
+	for (; div != 0; i--)
 	{
 		_putchar(((num / div) % 10) + '0');
 		div = div / 10;
